@@ -7,7 +7,7 @@ public abstract class Hand {
 	private List<Card> hand = new ArrayList<>();
 
 	public Hand() {
-		
+
 	}
 
 	public void addCard(Card card) {
@@ -16,7 +16,7 @@ public abstract class Hand {
 
 	public int getHandValue() {
 		int value = 0;
-		for (Card card : hand) {
+		for (Card card : this.hand) {
 			value += card.getValue();
 		}
 
@@ -24,7 +24,7 @@ public abstract class Hand {
 	}
 
 	public List<Card> getHand() {
-		return hand;
+		return this.hand;
 	}
 
 	public int getHandSize() {
@@ -32,7 +32,7 @@ public abstract class Hand {
 
 	}
 
-	public void printUnhiddenHand() {
+	public void cardsDeck() {
 		for (Card card : this.hand) {
 			System.out.print(card.toString() + " ");
 		}
@@ -42,5 +42,12 @@ public abstract class Hand {
 	public abstract void hit(Card card);
 
 	public abstract void stay();
+
+	public void printUnhiddenHand() {
+		for (Card card : this.hand) {
+			System.out.println(card.toString() + "\t");
+		}
+		System.out.println();
+	}
 
 }

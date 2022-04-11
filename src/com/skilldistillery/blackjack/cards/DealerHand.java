@@ -36,8 +36,21 @@ public class DealerHand extends Hand implements BlackJackHand {
 
 	}
 
-	public boolean hitOrStay() {
+	public boolean willDealerHit() {
 		return this.getHandValue() < 17 ? true : false;
+	}
+
+	public void printDealerHiddenHand() {
+		int amountOfCards = 1;
+		for (Card card : this.getHand()) {
+			if (amountOfCards++ == 1) {
+				System.out.println("Hidden card + \t");
+			} else {
+				System.out.println(card.toString() + "\t");
+			}
+			System.out.println();
+
+		}
 	}
 
 }
